@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Last Notice — case intake</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --line: #e4ddd2;
+      --paper: #f7f4ee;
+      --card: #fffdf9;
+      --accent: #8c3a2f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+    }
+    header, main, footer { max-width: 40rem; margin: 0 auto; padding: 0 1.25rem; }
+    header { padding-top: 2.5rem; padding-bottom: 0.5rem; }
+    .mark {
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.75rem;
+    }
+    h1 { font-size: 2rem; line-height: 1.15; font-weight: 600; margin: 0 0 0.75rem; }
+    .lede { font-size: 1.05rem; margin: 0; }
+    main { padding-bottom: 2rem; }
+    form, .out {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1rem 1rem 1.1rem;
+      margin-top: 1.25rem;
+    }
+    label {
+      display: block;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.85rem;
+      margin: 0.85rem 0 0.3rem;
+    }
+    label:first-of-type { margin-top: 0; }
+    input, textarea {
+      width: 100%;
+      font: 1rem Georgia, "Iowan Old Style", Palatino, serif;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0.45rem 0.55rem;
+    }
+    textarea { min-height: 6.5rem; resize: vertical; }
+    .hint {
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0.2rem 0 0;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    button {
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+      color: #fff;
+      background: var(--accent);
+      border: 0;
+      border-radius: 6px;
+      padding: 0.55rem 0.9rem;
+      cursor: pointer;
+    }
+    button.secondary { color: var(--ink); background: #fff; border: 1px solid var(--line); }
+    .error {
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin: 0.75rem 0 0;
+      min-height: 1.2em;
+    }
+    h2 {
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 650;
+      margin: 0 0 0.5rem;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas, monospace;
+      font-size: 0.85rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0.75rem;
+      margin: 0;
+    }
+    .out[hidden] { display: none; }
+    footer {
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+      padding-bottom: 2.5rem;
+      max-width: 40rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="mark">Last Notice · Ireland</p>
+    <h1>Case intake</h1>
+    <p class="lede">For one unpaid invoice, where you and the debtor business are in Ireland. This page stays on this computer. Submit does not email anyone and does not store the case anywhere else. It writes a plain-text file you can download and copy.</p>
+  </header>
+  <main>
+    <form id="intake" action="javascript:void(0)" novalidate>
+      <label for="customer-name">Your name</label>
+      <input id="customer-name" name="customer-name" type="text" autocomplete="name" required maxlength="200">
+
+      <label for="customer-email">Your email</label>
+      <input id="customer-email" name="customer-email" type="email" autocomplete="email" required maxlength="200">
+      <p class="hint">The address the chase would be sent from, later, by you. This form does not send it.</p>
+
+      <label for="debtor-name">Debtor business name</label>
+      <input id="debtor-name" name="debtor-name" type="text" required maxlength="200">
+
+      <label for="amount">Amount owed, in euro</label>
+      <input id="amount" name="amount" type="number" inputmode="decimal" min="0.01" step="0.01" required>
+      <p class="hint">The figure on the invoice that is still unpaid. Do not add interest or a fee.</p>
+
+      <label for="invoice-number">Invoice number</label>
+      <input id="invoice-number" name="invoice-number" type="text" required maxlength="80">
+
+      <label for="due-date">Due date</label>
+      <input id="due-date" name="due-date" type="date" required>
+
+      <label for="note">Short note</label>
+      <textarea id="note" name="note" maxlength="2000" placeholder="What the invoice was for, and anything the bot should know. Optional."></textarea>
+
+      <p id="form-error" class="error" role="alert"></p>
+      <div class="actions">
+        <button type="submit">Build case.txt</button>
+      </div>
+    </form>
+
+    <section id="output" class="out" hidden>
+      <h2>Case file</h2>
+      <p class="hint">Not sent. Copy this text, or download it. The file name is case.txt.</p>
+      <pre id="case-text" tabindex="0"></pre>
+      <div class="actions">
+        <button type="button" id="download">Download case.txt</button>
+        <button type="button" class="secondary" id="copy">Select text</button>
+      </div>
+      <p id="copy-status" class="hint" role="status"></p>
+    </section>
+  </main>
+  <footer>
+    Last Notice. Local intake only. Ireland. This page is not a solicitor, not a court form, and not a demand that has been sent.
+  </footer>
+  <script>
+    (function () {
+      var form = document.getElementById("intake");
+      var errorEl = document.getElementById("form-error");
+      var output = document.getElementById("output");
+      var caseText = document.getElementById("case-text");
+      var copyStatus = document.getElementById("copy-status");
+      var latest = "";
+
+      function clean(value) {
+        return String(value == null ? "" : value).replace(/\r\n/g, "\n").replace(/\r/g, "\n").trim();
+      }
+
+      function money(value) {
+        var n = Number(value);
+        if (!isFinite(n)) return "";
+        return n.toFixed(2);
+      }
+
+      function build() {
+        var name = clean(document.getElementById("customer-name").value);
+        var email = clean(document.getElementById("customer-email").value);
+        var debtor = clean(document.getElementById("debtor-name").value);
+        var amount = money(document.getElementById("amount").value);
+        var invoice = clean(document.getElementById("invoice-number").value);
+        var due = clean(document.getElementById("due-date").value);
+        var note = clean(document.getElementById("note").value);
+        if (!note) note = "(none)";
+
+        var lines = [
+          "Last Notice — case file",
+          "Market: Ireland",
+          "Status: local intake only. This file was not sent, filed, or paid.",
+          "",
+          "Customer name: " + name,
+          "Customer email: " + email,
+          "Debtor business name: " + debtor,
+          "Amount owed (EUR): " + amount,
+          "Invoice number: " + invoice,
+          "Due date: " + due,
+          "Note:",
+          note,
+          "",
+          "Next step is a draft chase for the customer to send from their own email.",
+          "Do not send it until Kenneth has approved that exact email."
+        ];
+        return lines.join("\n") + "\n";
+      }
+
+      function validate() {
+        var name = clean(document.getElementById("customer-name").value);
+        var email = clean(document.getElementById("customer-email").value);
+        var debtor = clean(document.getElementById("debtor-name").value);
+        var amountRaw = document.getElementById("amount").value;
+        var amount = Number(amountRaw);
+        var invoice = clean(document.getElementById("invoice-number").value);
+        var due = clean(document.getElementById("due-date").value);
+        if (!name || !email || !debtor || !invoice || !due) {
+          return "Fill in name, email, debtor, amount, invoice number, and due date.";
+        }
+        if (email.indexOf("@") < 1 || email.indexOf(".") < 0) {
+          return "Enter an email address.";
+        }
+        if (!isFinite(amount) || amount <= 0) {
+          return "Enter an amount in euro greater than zero.";
+        }
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(due)) {
+          return "Enter a due date.";
+        }
+        return "";
+      }
+
+      function downloadText(text) {
+        var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = "case.txt";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var problem = validate();
+        errorEl.textContent = problem;
+        if (problem) {
+          output.hidden = true;
+          return;
+        }
+        latest = build();
+        caseText.textContent = latest;
+        output.hidden = false;
+        copyStatus.textContent = "Shown on this page. Nothing was sent.";
+        downloadText(latest);
+        output.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      document.getElementById("download").addEventListener("click", function () {
+        if (!latest) return;
+        downloadText(latest);
+        copyStatus.textContent = "Download started. The file name is case.txt. Nothing was sent.";
+      });
+
+      document.getElementById("copy").addEventListener("click", function () {
+        if (!latest) return;
+        var range = document.createRange();
+        range.selectNodeContents(caseText);
+        var selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        copyStatus.textContent = "Text selected. Copy it with your usual copy command. Nothing was sent.";
+      });
+    })();
+  </script>
+</body>
+</html>

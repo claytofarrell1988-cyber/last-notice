@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Last Notice — unpaid invoices, Ireland</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --line: #e4ddd2;
+      --paper: #f7f4ee;
+      --card: #fffdf9;
+      --accent: #8c3a2f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+    }
+    header, main, footer { max-width: 40rem; margin: 0 auto; padding: 0 1.25rem; }
+    header { padding-top: 2.5rem; padding-bottom: 1.5rem; }
+    .mark {
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.75rem;
+    }
+    h1 { font-size: 2.25rem; line-height: 1.15; font-weight: 600; margin: 0 0 0.75rem; }
+    .lede { font-size: 1.15rem; margin: 0 0 1.25rem; }
+    a.start {
+      display: inline-block;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      color: #fff;
+      background: var(--accent);
+      text-decoration: none;
+      border-radius: 6px;
+      padding: 0.6rem 1rem;
+    }
+    a.start:hover { text-decoration: underline; }
+    .start-note {
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0.6rem 0 0;
+    }
+    main { padding-bottom: 2.5rem; }
+    section { margin-top: 2rem; }
+    h2 {
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 650;
+      margin: 0 0 0.75rem;
+    }
+    ol { margin: 0; padding: 0; list-style: none; counter-reset: step; }
+    li.step {
+      counter-increment: step;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.9rem 1rem 0.9rem 3.2rem;
+      position: relative;
+      margin: 0 0 0.6rem;
+    }
+    li.step::before {
+      content: counter(step);
+      position: absolute;
+      left: 0.9rem;
+      top: 0.95rem;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+    .price {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+    .price article {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .price strong { display: block; font-size: 1.5rem; font-weight: 600; }
+    .note, .not, footer, .pay {
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+    }
+    .note, .pay {
+      background: #fff;
+      border-left: 3px solid var(--accent);
+      padding: 0.75rem 1rem;
+      margin: 0.9rem 0 0;
+    }
+    ul { margin: 0; padding-left: 1.1rem; }
+    li { margin: 0.25rem 0; }
+    a { color: var(--accent); }
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding-top: 1rem;
+      padding-bottom: 2.5rem;
+      max-width: 40rem;
+    }
+    @media (max-width: 36rem) {
+      .price { grid-template-columns: 1fr; }
+      h1 { font-size: 1.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="mark">Last Notice · Ireland</p>
+    <h1>A dated chase for an unpaid invoice that is too small for a collections agency.</h1>
+    <p class="lede">Last Notice is for freelancers and small agencies in Ireland who are owed an unpaid invoice. You pick €99 up front, or 5% of the money you actually recover. You send the chase yourself, from your own email, after you approve the wording. If it is still unpaid, you get a pack that says which court form, which fee, what to attach, and where to file. You decide whether to file. We do not contact the other party, and we do not hold the money.</p>
+    <a class="start" href="intake.html">Start with the intake</a>
+    <p class="start-note">The intake is the way to start. It stays in your browser and downloads a file named case.txt. It does not email anyone.</p>
+  </header>
+  <main>
+    <section>
+      <h2>How it works</h2>
+      <ol>
+        <li class="step"><strong>You send the papers.</strong> The contract, the invoice, and the email thread. We read them and we do not add interest or a fee that is not already on those papers. Start by filling in <a href="intake.html">the intake</a>.</li>
+        <li class="step"><strong>You approve the wording, then you send the chase.</strong> The chase is one dated email. It names the invoice and the amount still unpaid, and asks for payment. It does not pretend to be a court order. The chase is sent by you, from your own email, after you approve the wording. Last Notice is not the sender.</li>
+        <li class="step"><strong>If you are still unpaid, you get a court pack, not a lecture.</strong> For an unpaid invoice in Ireland that pack is a District Court debt claim (Claim Notice, Form 40.02) when the sum is €15,000 or under, with the fee band and the office that matches the papers. It is not a Small Claims form. The Courts Service says Small Claims cannot be used for unpaid invoices. You file it yourself, and only if you decide to. We do not file it for you in this version.</li>
+      </ol>
+    </section>
+    <section>
+      <h2>Pricing</h2>
+      <div class="price">
+        <article>
+          <strong>€99</strong>
+          Paid up front, for the chase draft and the pack if you still need it. Not a share of the invoice.
+        </article>
+        <article>
+          <strong>5%</strong>
+          Of the money you actually recover on that invoice. If you are not paid, this is €0. You do not pay the percentage on a promise.
+        </article>
+      </div>
+      <p>You pick one: €99 up front, or 5% of money recovered. The 5% is due only when you have been paid. We do not take the 30–50% a collections agency often charges, and we do not take the debtor’s payment into our account. They pay you.</p>
+      <p class="pay">Payment details are not live yet, so the first cases are taken by email to <a href="mailto:farrellfieldnotes@agentmail.to">farrellfieldnotes@agentmail.to</a> until payments are switched on.</p>
+    </section>
+    <section>
+      <h2>Ireland only</h2>
+      <p class="note">Last Notice is for invoices where you and the other party are in Ireland. The chase is sent by you from your own email after you approve the wording. Preparing a draft is not sending it. Preparing a pack is not filing it. Court fees on the District Court guide we use are €25 up to €5,000, €70 up to €10,000, and €80 up to €15,000, paid by you to the court office if you file. This page is a description of the service, not legal advice, and the service is not a solicitor and not a Central Bank firm.</p>
+    </section>
+    <section>
+      <h2>Who it is not for</h2>
+      <ul class="not">
+        <li>Anyone outside Ireland, or a debtor outside Ireland.</li>
+        <li>Loans, credit cards, hire-purchase, leases, and other credit agreements. This is for an unpaid invoice for work.</li>
+        <li>A debt you want sold, or you want us to collect into our own bank account.</li>
+        <li>A case already in court.</li>
+        <li>An invoice over €15,000, for now. Above that the Courts Service points to the Circuit Court or the High Court, and this version does not have those forms or fees.</li>
+        <li>Anyone who wants a letter that looks like an official court document, or a threat of criminal proceedings. We will not write that.</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    Last Notice. A first version for Kenneth Farrell, October 2026. No testimonials, because there are no customers yet. Nothing on this page has been filed or sent.
+  </footer>
+</body>
+</html>
