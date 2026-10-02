@@ -101,6 +101,27 @@
       padding-top: 1rem;
       padding-bottom: 2.5rem;
     }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin: 0 0 0.75rem;
+    }
+    .brand .mark { margin: 0; }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 4px;
+      flex: none;
+    }
+    .hero {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 0 1rem;
+      border-radius: 8px;
+    }
     @media (max-width: 36rem) {
       .price { grid-template-columns: 1fr; }
       h1 { font-size: 1.8rem; }
@@ -109,8 +130,12 @@
 </head>
 <body>
   <header>
-    <p class="mark">Last Notice · Ireland</p>
+    <div class="brand">
+      <img src="mark.jpg" width="48" height="48" alt="Envelope mark">
+      <p class="mark">Last Notice · Ireland</p>
+    </div>
     <h1>A dated chase for an unpaid invoice, written for you to send.</h1>
+    <img class="hero" src="hero.jpg" alt="Desk and invoice">
     <p class="lede">Last Notice is for freelancers and small agencies in Ireland who are owed an unpaid invoice and do not want a collections agency. You choose €99 up front, or 5% of money you actually recover. You send the chase from your own email. Nothing is emailed to the debtor until you have approved the wording and Kenneth has approved that exact send.</p>
     <a class="start" href="intake.html">Start with the intake</a>
     <a class="start-secondary" href="mailto:farrellfieldnotes@agentmail.to?subject=Last%20Notice%20enquiry">Email farrellfieldnotes@agentmail.to</a>
