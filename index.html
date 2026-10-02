@@ -21,9 +21,10 @@
       color: var(--ink);
       background: var(--paper);
       line-height: 1.5;
+      font-size: 1.05rem;
     }
     header, main, footer { max-width: 40rem; margin: 0 auto; padding: 0 1.25rem; }
-    header { padding-top: 2.5rem; padding-bottom: 1.5rem; }
+    header { padding-top: 2.25rem; padding-bottom: 0.5rem; }
     .mark {
       font-family: "Segoe UI", Helvetica, Arial, sans-serif;
       font-size: 0.75rem;
@@ -32,142 +33,183 @@
       color: var(--accent);
       margin: 0 0 0.75rem;
     }
-    h1 { font-size: 2.25rem; line-height: 1.15; font-weight: 600; margin: 0 0 0.75rem; }
-    .lede { font-size: 1.15rem; margin: 0 0 1.25rem; }
-    a.start {
-      display: inline-block;
-      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-      font-size: 1rem;
-      color: #fff;
-      background: var(--accent);
-      text-decoration: none;
-      border-radius: 6px;
-      padding: 0.6rem 1rem;
-    }
-    a.start:hover { text-decoration: underline; }
-    .start-note {
-      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin: 0.6rem 0 0;
-    }
-    main { padding-bottom: 2.5rem; }
-    section { margin-top: 2rem; }
+    h1 { font-size: 2.15rem; line-height: 1.15; font-weight: 600; margin: 0 0 0.75rem; }
     h2 {
       font-family: "Segoe UI", Helvetica, Arial, sans-serif;
       font-size: 0.8rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-weight: 650;
-      margin: 0 0 0.75rem;
+      margin: 0 0 0.65rem;
     }
-    ol { margin: 0; padding: 0; list-style: none; counter-reset: step; }
-    li.step {
-      counter-increment: step;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 0.9rem 1rem 0.9rem 3.2rem;
-      position: relative;
-      margin: 0 0 0.6rem;
-    }
-    li.step::before {
-      content: counter(step);
-      position: absolute;
-      left: 0.9rem;
-      top: 0.95rem;
+    h3 { font-size: 1.15rem; font-weight: 600; margin: 0 0 0.4rem; }
+    .lede { font-size: 1.12rem; margin: 0 0 1.1rem; }
+    a.start, a.start-secondary {
+      display: inline-block;
       font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-      font-size: 0.85rem;
-      color: var(--accent);
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 6px;
+      padding: 0.65rem 1rem;
+      margin: 0 0.5rem 0.5rem 0;
     }
-    .price {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.6rem;
-    }
-    .price article {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 1rem;
-    }
-    .price strong { display: block; font-size: 1.5rem; font-weight: 600; }
-    .note, .not, footer, .pay {
+    a.start { color: #fff; background: var(--accent); }
+    a.start-secondary { color: var(--ink); background: #fff; border: 1px solid var(--line); }
+    a.start:hover, a.start-secondary:hover { text-decoration: underline; }
+    .start-note, .muted, footer, .pay, .note {
       font-family: "Segoe UI", Helvetica, Arial, sans-serif;
       font-size: 0.95rem;
     }
+    .start-note { color: var(--muted); margin: 0.35rem 0 0; }
+    main { padding-bottom: 1.5rem; }
+    section { margin-top: 2rem; }
+    ul, ol { margin: 0; padding-left: 1.2rem; }
+    li { margin: 0.4rem 0; }
+    .card, .example, .price article {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.95rem 1rem;
+    }
+    .price { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .price strong { display: block; font-size: 1.5rem; font-weight: 600; }
     .note, .pay {
       background: #fff;
       border-left: 3px solid var(--accent);
       padding: 0.75rem 1rem;
       margin: 0.9rem 0 0;
     }
-    ul { margin: 0; padding-left: 1.1rem; }
-    li { margin: 0.25rem 0; }
+    .example { margin-top: 0.6rem; }
+    .tag {
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.4rem;
+    }
+    blockquote {
+      margin: 0.6rem 0;
+      padding: 0.6rem 0.8rem;
+      background: #fff;
+      border-left: 3px solid var(--line);
+    }
     a { color: var(--accent); }
     footer {
       border-top: 1px solid var(--line);
       color: var(--muted);
       padding-top: 1rem;
       padding-bottom: 2.5rem;
-      max-width: 40rem;
     }
     @media (max-width: 36rem) {
       .price { grid-template-columns: 1fr; }
-      h1 { font-size: 1.85rem; }
+      h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
   <header>
     <p class="mark">Last Notice · Ireland</p>
-    <h1>A dated chase for an unpaid invoice that is too small for a collections agency.</h1>
-    <p class="lede">Last Notice is for freelancers and small agencies in Ireland who are owed an unpaid invoice. You pick €99 up front, or 5% of the money you actually recover. You send the chase yourself, from your own email, after you approve the wording. If it is still unpaid, you get a pack that says which court form, which fee, what to attach, and where to file. You decide whether to file. We do not contact the other party, and we do not hold the money.</p>
+    <h1>A dated chase for an unpaid invoice, written for you to send.</h1>
+    <p class="lede">Last Notice is for freelancers and small agencies in Ireland who are owed an unpaid invoice and do not want a collections agency. You choose €99 up front, or 5% of money you actually recover. You send the chase from your own email. Nothing is emailed to the debtor until you have approved the wording and Kenneth has approved that exact send.</p>
     <a class="start" href="intake.html">Start with the intake</a>
-    <p class="start-note">The intake is the way to start. It stays in your browser and downloads a file named case.txt. It does not email anyone.</p>
+    <a class="start-secondary" href="mailto:farrellfieldnotes@agentmail.to?subject=Last%20Notice%20enquiry">Email farrellfieldnotes@agentmail.to</a>
+    <p class="start-note">The intake stays in your browser and downloads a file named case.txt. It does not email anyone and it does not take payment.</p>
   </header>
   <main>
     <section>
-      <h2>How it works</h2>
-      <ol>
-        <li class="step"><strong>You send the papers.</strong> The contract, the invoice, and the email thread. We read them and we do not add interest or a fee that is not already on those papers. Start by filling in <a href="intake.html">the intake</a>.</li>
-        <li class="step"><strong>You approve the wording, then you send the chase.</strong> The chase is one dated email. It names the invoice and the amount still unpaid, and asks for payment. It does not pretend to be a court order. The chase is sent by you, from your own email, after you approve the wording. Last Notice is not the sender.</li>
-        <li class="step"><strong>If you are still unpaid, you get a court pack, not a lecture.</strong> For an unpaid invoice in Ireland that pack is a District Court debt claim (Claim Notice, Form 40.02) when the sum is €15,000 or under, with the fee band and the office that matches the papers. It is not a Small Claims form. The Courts Service says Small Claims cannot be used for unpaid invoices. You file it yourself, and only if you decide to. We do not file it for you in this version.</li>
-      </ol>
+      <h2>Who it is for</h2>
+      <ul>
+        <li>A freelancer or small agency based in Ireland.</li>
+        <li>An unpaid invoice for work you did, where the other party is also in Ireland.</li>
+        <li>A balance that is often too small for a collections agency, and that you still want asked for in writing.</li>
+        <li>Someone who will send the chase themselves, from their own email, after the wording is agreed.</li>
+      </ul>
     </section>
     <section>
-      <h2>Pricing</h2>
+      <h2>Who it is not for</h2>
+      <ul>
+        <li>Anyone outside Ireland, or a debtor outside Ireland.</li>
+        <li>Loans, credit cards, hire-purchase, leases, and other credit agreements. This is an unpaid invoice for work.</li>
+        <li>A debt you want sold, or money you want paid into a Last Notice account. The debtor pays you. Last Notice does not hold the money.</li>
+        <li>A case already in court.</li>
+        <li>An invoice over €15,000, for now. This version does not have Circuit Court or High Court forms or fees.</li>
+        <li>Anyone who wants a letter that looks like a solicitor, a court, a sheriff, or a regulated firm.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Exactly what you get</h2>
+      <ol>
+        <li>One dated chase draft. It names the invoice, the due date, and the amount still unpaid, and asks for payment or for a clear statement of what is disputed. It says it is from you, not from a solicitor, and that it is not a court document.</li>
+        <li>A short check of the papers you send, so the draft does not add interest or a fee that is not already on those papers, and does not ignore a dispute that is already in the email thread.</li>
+        <li>If it is still unpaid after the date in the chase you sent, a court pack for you to read: for an unpaid invoice of €15,000 or under, that is a District Court debt claim (Claim Notice, Form 40.02), the fee band, what to attach, and which kind of court office matches the papers. It is not a Small Claims form. The Courts Service says Small Claims cannot be used for unpaid invoices. You file it yourself, and only if you decide to. This version does not file it for you.</li>
+      </ol>
+      <p class="note">Court fees on the District Court guide this service uses are €25 up to €5,000, €70 up to €10,000, and €80 up to €15,000. You pay any fee to the court office if you file. Preparing a pack is not filing it. This page is a description of the service, not legal advice. Last Notice is not a solicitor and not a Central Bank firm.</p>
+    </section>
+    <section>
+      <h2>What you send</h2>
+      <p>The intake asks for:</p>
+      <ul>
+        <li>Your name</li>
+        <li>Your email (the address you would send the chase from)</li>
+        <li>The debtor business name</li>
+        <li>The amount still unpaid, in euro, with no interest added</li>
+        <li>The invoice number</li>
+        <li>The due date</li>
+        <li>A short note: what the invoice was for, and anything that is already disputed</li>
+      </ul>
+      <p>The form does not upload files. Email <a href="mailto:farrellfieldnotes@agentmail.to">farrellfieldnotes@agentmail.to</a> the downloaded case.txt plus the contract or written scope, the invoice, and the email thread so far. Those papers are what the draft is checked against. A chase is not treated as ready from the form alone.</p>
+    </section>
+    <section>
+      <h2>What Last Notice will not do</h2>
+      <ul>
+        <li>No solicitor pretence, no crest, no fake case number, and no wording that looks like an official court document.</li>
+        <li>No threats, no claim that non-payment is a crime, and no statement that proceedings have already been issued.</li>
+        <li>No email, call, or letter to a debtor until Kenneth has approved that exact send. Your approval is also required. A template is not that approval. The default is that you send the chase from your own email.</li>
+        <li>No new interest, compensation, or chase fee added on top of the invoice.</li>
+        <li>No ranking promise, no ads, and no marketing claim. This is a paperwork service for one unpaid invoice.</li>
+        <li>No payment taken on this page. There is no card form and no bank details here.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Price</h2>
       <div class="price">
         <article>
           <strong>€99</strong>
-          Paid up front, for the chase draft and the pack if you still need it. Not a share of the invoice.
+          Paid up front, for the chase draft and the pack if you still need it. Not a share of the invoice. You pick this or the 5%, not both.
         </article>
         <article>
           <strong>5%</strong>
           Of the money you actually recover on that invoice. If you are not paid, this is €0. You do not pay the percentage on a promise.
         </article>
       </div>
-      <p>You pick one: €99 up front, or 5% of money recovered. The 5% is due only when you have been paid. We do not take the 30–50% a collections agency often charges, and we do not take the debtor’s payment into our account. They pay you.</p>
-      <p class="pay">Payment details are not live yet, so the first cases are taken by email to <a href="mailto:farrellfieldnotes@agentmail.to">farrellfieldnotes@agentmail.to</a> until payments are switched on.</p>
+      <p class="pay">Payment is not live. A way to pay is added when the first job is taken. Until then, start by email or the intake. VAT is not added: the operator is not VAT registered. The debtor pays you, not Last Notice.</p>
     </section>
     <section>
-      <h2>Ireland only</h2>
-      <p class="note">Last Notice is for invoices where you and the other party are in Ireland. The chase is sent by you from your own email after you approve the wording. Preparing a draft is not sending it. Preparing a pack is not filing it. Court fees on the District Court guide we use are €25 up to €5,000, €70 up to €10,000, and €80 up to €15,000, paid by you to the court office if you file. This page is a description of the service, not legal advice, and the service is not a solicitor and not a Central Bank firm.</p>
+      <h2>How long it takes</h2>
+      <p>If the intake is complete on a working day (Monday to Friday, Ireland, and not an Irish public holiday), the first chase draft is ready the same day. Complete means the intake fields are filled and the contract or scope, the invoice, and the email thread are in the same email. If something is missing, the same-day clock starts when it arrives. The draft is for you to read. It has not been sent.</p>
     </section>
     <section>
-      <h2>Who it is not for</h2>
-      <ul class="not">
-        <li>Anyone outside Ireland, or a debtor outside Ireland.</li>
-        <li>Loans, credit cards, hire-purchase, leases, and other credit agreements. This is for an unpaid invoice for work.</li>
-        <li>A debt you want sold, or you want us to collect into our own bank account.</li>
-        <li>A case already in court.</li>
-        <li>An invoice over €15,000, for now. Above that the Courts Service points to the Circuit Court or the High Court, and this version does not have those forms or fees.</li>
-        <li>Anyone who wants a letter that looks like an official court document, or a threat of criminal proceedings. We will not write that.</li>
-      </ul>
+      <h2>Worked example</h2>
+      <div class="example">
+        <p class="tag">Example only · not a customer · nothing here was sent or paid</p>
+        <p>Aoife Byrne is a fictional freelance designer in Cork. She is owed €480 on invoice ABD-219, due 3 September 2026, by a fictional client, Green Field Cafe Ltd. Both are in Ireland. The invoice was for a menu and a window poster. The email thread shows one earlier reminder and no dispute.</p>
+        <p>The chase draft would read, in substance:</p>
+        <blockquote>
+          <p>Subject: Invoice ABD-219 is overdue</p>
+          <p>Dear Green Field Cafe Ltd, I am writing about invoice ABD-219, which was due on 3 September 2026. The amount still unpaid is €480. Please pay that amount within 7 days of this email. If you dispute the invoice, reply within those same 7 days and say what you dispute. This email is from me, Aoife Byrne. I am not writing as a solicitor, and this is not a court document.</p>
+        </blockquote>
+        <p>Aoife would send that from her own email, and only after she approved the wording and Kenneth approved that exact send. If she chose 5% and later confirmed she was paid €480, the fee would be €24. If she chose €99 up front, €99 is the fee either way. These names, the invoice, and the amount are made up for this page.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Start</h2>
+      <p>Email <a href="mailto:farrellfieldnotes@agentmail.to">farrellfieldnotes@agentmail.to</a> or use the <a href="intake.html">intake</a>. Say which price you want: €99 up front, or 5% of money actually recovered.</p>
+      <p><a class="start" href="intake.html">Open the intake</a></p>
     </section>
   </main>
   <footer>
-    Last Notice. A first version for Kenneth Farrell, October 2026. No testimonials, because there are no customers yet. Nothing on this page has been filed or sent.
+    Last Notice. Ireland. Run by Kenneth Farrell. Not a solicitor. Not VAT registered. No testimonials, because there are no customers yet. Nothing on this page has been filed or sent. October 2026.
   </footer>
 </body>
 </html>
